@@ -1,5 +1,6 @@
 {
   "private": true,
+  "version": "0.6.9",
   "scripts": {
     "build": "cd packages/graphqlgen-json-schema && yarn build && cd ../graphqlgen && yarn build",
     "test": "yarn build && cd packages/graphqlgen && yarn test",
