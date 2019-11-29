@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "JSON schema for graphqlgen.yml files",
+  "properties": {
+    "language": {
+      "type": "string",
+      "oneOf": [{ "enum": ["typescript", "flow"] }]
+    },
+    "schema": {
+      "type": "string"
+    },
+    "context": {
+      "type": "string"
+    },
+    "models": {
+      "type": "object",
+      "properties": {
+        "files": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "defaultName": {
+                    "type": "string"
+                  }
+                },
+                "required": ["path"]
+              }
+            ]
+          }
+        },
+        "override": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z0-9]*$": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "output": {
+      "type": "string",
+      "description": "Path to main output file"
+    },
+    "resolver-scaffolding": {
+      "description": "All output fields",
+      "type": "object",
+      "properties": {
+        "output": {
+          "type": "string",
+          "description": "Path to scaffolded file for missing model definitions"
+        },
+        "layout": {
+          "type": "string",
+          "oneOf": [{ "enum": ["file-per-type"] }]
+        }
+      },
+      "required": ["output", "layout"],
+      "additionalProperties": false
+    },
+    "iresolvers-augmentation": {
+      "description": "A boolean dictating if Apollo Server IResolvers type should be augmented so that it is compatible with graphqlgen `Resolvers` type",
+      "type": "boolean"
+    },
+    "default-resolvers": {
+      "description": "A boolean dictating if default resolvers will be generated or not",
+      "type": "boolean"
+    },
+    "delegated-parent-resolvers": {
+      "description": "A boolean dictating if the resolver signatures generated should include the signature for DelegatedParentResolvers",
+      "type": "boolean"
+    }
+  },
+  "required": ["language", "schema", "models", "output"],
+  "additionalProperties": false
+}
