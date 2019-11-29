@@ -1,0 +1,1 @@
+{"version":3,"file":"scaffolder.js","sourceRoot":"","sources":["../../../src/generators/reason/scaffolder.ts"],"names":[],"mappings":";;AAEA,yCAAoC;AAA3B,6BAAA,MAAM,CAAA;AAEf,IAAM,IAAI,GAAG,UAAC,CAAS,IAAK,OAAA,CAAC,EAAD,CAAC,CAAA;AAE7B,SAAgB,QAAQ,CAAC,IAAkB;IACzC,IAAI,CAAC,IAAI,CAAC,SAAS,CAAC,IAAI,CAAC,CAAC,CAAA;IAC1B,OAAO,8CAA8C,CAAA;AACvD,CAAC;AAHD,4BAGC"}
